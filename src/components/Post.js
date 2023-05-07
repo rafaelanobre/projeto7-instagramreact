@@ -25,6 +25,21 @@ export default function Post(props) {
         });
     }
 
+    function likeImagem() {
+        const newLike = 'heart';
+        const newHeartColor = 'red';
+        setLike(newLike);
+        setHeartColor(newHeartColor);
+
+        setLikesCount(prevCount => {
+            if (prevCount === Number(props.likesCount)) {
+                return prevCount + 0.001;
+            } else {
+                return prevCount;
+            }
+        });
+    }
+
 
     return (
         <div className="post" data-test="post">
@@ -39,7 +54,7 @@ export default function Post(props) {
             </div>
     
             <div className="conteudo">
-                <img src={props.image} alt={props.alt} onDoubleClick={likePost} data-test="post-image" />
+                <img src={props.image} alt={props.alt} onDoubleClick={likeImagem} data-test="post-image" />
             </div>
     
             <div className="fundo">
