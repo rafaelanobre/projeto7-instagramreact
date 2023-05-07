@@ -207,6 +207,9 @@ body {
 .post:last-child {
   margin-bottom: 18px;
 }
+.red-heart, .red-heart ion-icon {
+  color: red;
+}
 
 .sidebar {
   padding-top: 24px;
@@ -224,6 +227,7 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .sidebar > .usuario .texto {
