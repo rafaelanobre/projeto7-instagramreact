@@ -5,6 +5,7 @@ export default function Post(props) {
     const [like, setLike] = useState('heart-outline');
     const [heartColor, setHeartColor] = useState('black');
     const [likesCount, setLikesCount] = useState(Number(props.likesCount));
+    const [classHeart, setClassHeart] = useState('heart');
 
     function savePost(){
         setSave(save === 'bookmark' ? 'bookmark-outline' : 'bookmark');
@@ -38,6 +39,13 @@ export default function Post(props) {
                 return prevCount;
             }
         });
+
+        const newClass = 'animation-heart';
+        setClassHeart(newClass);
+
+        setTimeout(() => {
+            setClassHeart(classHeart);
+        }, 1000);
     }
 
 
@@ -53,9 +61,11 @@ export default function Post(props) {
                 </div>
             </div>
     
-            <div className="conteudo">
-                <img src={props.image} alt={props.alt} onDoubleClick={likeImagem} data-test="post-image" />
-                {/* <img src="public\assets\img\heart.png" alt="like heart" class="heart-start"/> */}
+            <div className="conteudo" onDoubleClick={likeImagem}>
+                <div className="wrapper">
+                    <img src="assets\img\heart.png" alt="like heart" className={classHeart}/>
+                </div>
+                <img src={props.image} alt={props.alt}  className="post-image" data-test="post-image" />
             </div>
     
             <div className="fundo">

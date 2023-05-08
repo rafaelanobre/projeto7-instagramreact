@@ -176,7 +176,7 @@ body {
   cursor: pointer;
 }
 
-.post .conteudo img {
+.post-image {
   width: 100%;
 }
 
@@ -309,6 +309,30 @@ ion-icon {
   color: black;
 }
 
-.heart-start{
+.wrapper {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 45%;
+    position: absolute;
+}
+.heart{
+  /* width: 60px; */
   display: none;
+}
+
+@keyframes animation-heart {
+  0% {
+    width: 60px;
+    opacity: 0%;
+  }
+  100% {
+    width: 300px;
+  opacity: 100%;
+  }
+}
+
+.animation-heart {
+  animation: animate-heart 300ms ease-out;  
 }
