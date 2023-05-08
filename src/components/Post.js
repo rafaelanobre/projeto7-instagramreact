@@ -26,7 +26,7 @@ export default function Post(props) {
         });
     }
 
-    function likeImagem() {
+    function likeImagem() {        
         const newLike = 'heart';
         const newHeartColor = 'red';
         setLike(newLike);
@@ -45,7 +45,7 @@ export default function Post(props) {
 
         setTimeout(() => {
             setClassHeart(classHeart);
-        }, 1000);
+        }, 800);
     }
 
 
@@ -61,7 +61,12 @@ export default function Post(props) {
                 </div>
             </div>
     
-            <div className="conteudo" onDoubleClick={likeImagem}>
+            <div className="conteudo" onDoubleClick={likeImagem} onMouseDown={(event) => {
+                event.target.onselectstart = function () {
+                return false;
+                };
+            }}
+            >
                 <div className="wrapper">
                     <img src="assets\img\heart.png" alt="like heart" className={classHeart}/>
                 </div>

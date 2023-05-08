@@ -318,21 +318,24 @@ ion-icon {
     position: absolute;
 }
 .heart{
-  /* width: 60px; */
+  width: 80px;
   display: none;
+}
+
+
+
+.animation-heart {
+  animation: animation-heart 300ms ease-in;
+  width: 400px;
 }
 
 @keyframes animation-heart {
   0% {
-    width: 60px;
+    width: 80px;
     opacity: 0%;
   }
   100% {
-    width: 300px;
+    width: 400px;
   opacity: 100%;
   }
-}
-
-.animation-heart {
-  animation: animate-heart 300ms ease-out;  
 }
