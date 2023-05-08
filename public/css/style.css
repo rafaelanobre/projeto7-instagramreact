@@ -309,3 +309,6 @@ ion-icon {
   color: black;
 }
 
+.heart-start{
+  display: none;
+}
